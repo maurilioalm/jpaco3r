@@ -16,6 +16,7 @@ public class ObterUsuatios {
 		EntityManager em = emf.createEntityManager();
 		
 		String jpql="select u from Usuario u";
+		
 		TypedQuery<Usuario> query = em.createQuery(jpql, Usuario.class);
 		query.setMaxResults(5);
 		
