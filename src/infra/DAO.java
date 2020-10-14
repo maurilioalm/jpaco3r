@@ -47,6 +47,10 @@ public class DAO<T> {
 	public DAO<T> incluirCompleto(T entidade) {
 		return this.abrirTransaction().incluir(entidade).fecharTransaction();
 	}
+	
+	public T obterPorId(Object id) {
+		return em.find(classe, id);
+	}
 
 	public List<T> obterTodos() {
 		return this.obterTodos(10, 0);
